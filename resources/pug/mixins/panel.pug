@@ -1,5 +1,6 @@
 mixin panel(title)
   .panel.panel-default&attributes(attributes)
-    .panel-heading
-      h3.panel-title(translate=title)
+    if title
+      .panel-heading
+        h3.panel-title(translate=title)
     block
