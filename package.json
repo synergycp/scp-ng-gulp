@@ -6,13 +6,13 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/cabloo/scp-ng-gulp.git"
+    "url": "git+ssh://github.com/synergycp/scp-ng-gulp.git"
   },
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/cabloo/scp-ng-gulp/issues"
+    "url": "https://github.com/synergycp/scp-ng-gulp/issues"
   },
-  "homepage": "https://github.com/cabloo/scp-ng-gulp#readme",
+  "homepage": "https://github.com/synergycp/scp-ng-gulp#readme",
   "dependencies": {
     "browser-sync": "^2.15.0",
     "gulp": "^3.9.1",
