@@ -1,0 +1,21 @@
+include mixins/table
+
++table().table-hover
+  thead
+    tr
+      th.checkbox-col
+        list-check-all
+      block headings
+  tbody
+    tr(
+      ng-repeat="row in table.list.list.items track by row.id"
+      ng-click="table.list.toggleCheck(row, $index, $event)"
+      ng-class="row.checked ? 'warning' : ''"
+      ng-show="table.list.list.items.length > 0"
+    )
+      td.checkbox-col 
+        list-check-item(checked="row.checked")
+      block columns
+div.no-results.panel-body(
+  ng-show="!table.list.list.items.length && table.list.list.loader.hasLoaded"
+) No results

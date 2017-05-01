@@ -1,0 +1,34 @@
+extends modal
+
+block vars
+  - var lang = "{{ modal.lang }}"
+
+block title
+  span(
+    translate=lang+".TITLE"
+    translate-values="modal.data"
+  )
+
+block body
+  p(
+    translate=lang + ".BODY"
+    translate-values="modal.data"
+  )
+
+  ul
+    li(
+      ng-repeat="target in modal.targets"
+      ng-bind="target.name"
+    )
+
+block footer
+  button.btn.btn-secondary(
+    type="button"
+    ng-click="modal.$dismiss()"
+    data-translate=lang + ".CANCEL"
+  )
+  button.btn(
+    type="submit"
+    ng-class="modal.data.submitClass"
+    data-translate=lang + ".SUBMIT"
+  )

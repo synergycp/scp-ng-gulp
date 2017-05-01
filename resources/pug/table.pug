@@ -1,0 +1,15 @@
+include mixins/table
+
++table()
+  thead
+    tr
+      block headings
+  tbody
+    tr(
+      ng-repeat="row in table.list.list.items track by row.id"
+      ng-show="table.list.list.items.length > 0"
+    )
+      block columns
+div.no-results.panel-body(
+  ng-show="!table.list.list.items.length && table.list.list.loader.hasLoaded"
+) No results
