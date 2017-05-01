@@ -6,6 +6,11 @@ mixin field(label, name)
     )&attributes(attributes)
     block
 
+mixin static(label)
+  +label(label)
+    p.form-control-static&attributes(attributes)
+      block
+
 mixin double-field(label, name, fattrs, sattrs, dualClass)
   .form-group.dual-input(
     class=dualClass
