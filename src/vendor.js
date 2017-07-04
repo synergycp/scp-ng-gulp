@@ -31,8 +31,10 @@ function vendor(options) {
       .pipe($.expectFile(options.src))
 
       .pipe(jsFilter)
+        .pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.concat(options.dest.js))
         .pipe($.if(settings.isProduction, $.uglify()))
+        .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest(options.dest.dirJs))
       .pipe(jsFilter.restore())
 
