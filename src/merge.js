@@ -18,6 +18,7 @@ function merge(options) {
     return gulp
       .src(options.src)
 
+      .pipe($.sourcemaps.init({loadMaps: true,  largeFile: true}))
       .pipe(jsFilter)
         .pipe($.concat(options.js))
       .pipe(jsFilter.restore())
@@ -26,6 +27,7 @@ function merge(options) {
         .pipe($.concat(options.css))
       .pipe(cssFilter.restore())
 
+      .pipe($.sourcemaps.write('./'))
       .pipe(gulp.dest(options.dest))
       ;
   };

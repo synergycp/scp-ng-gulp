@@ -14,6 +14,7 @@ function app(options) {
       .pipe($.jsvalidate())
       .on('error', util.error)
 
+      .pipe($.sourcemaps.init({loadMaps: true}))
       .pipe($.concat(options.dest))
       .pipe($.ngAnnotate())
       .on('error', util.error)
@@ -22,6 +23,7 @@ function app(options) {
         preserveComments: 'some',
       }))
       .on('error', util.error)
+      .pipe($.sourcemaps.write('./'))
       .pipe(gulp.dest('./'))
       ;
   };
