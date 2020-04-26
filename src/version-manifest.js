@@ -8,7 +8,7 @@ function genPrependManifest(ngModule, pkg) {
   return (
     '(function () {' +
     '  "use strict";' +
-    '  angular.module('+ngModule+')' +
+    '  angular.module("'+ngModule+'")' +
     '    .config(["versionsProvider", function (versionsProvider) {' +
     '      versionsProvider.'+addMethod
   );
