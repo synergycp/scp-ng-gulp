@@ -1,3 +1,5 @@
+// TODO: Deprecate this file in favor of the more generic version-manifest.js
+
 var path = require('path');
 var gulp = require('./settings').gulp;
 var $ = require('gulp-load-plugins')();
