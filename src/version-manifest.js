@@ -2,7 +2,6 @@ var path = require('path');
 var _ = require('lodash');
 var gulp = require('./settings').gulp;
 var $ = require('gulp-load-plugins')();
-var gulpsync = $.sync(gulp);
 function genPrependManifest(ngModule, pkg) {
   var addMethod = pkg ? 'addForPackage("'+ pkg + '",' : 'add(';
   return (
@@ -66,6 +65,6 @@ function versionManifest(optionOverrides) {
       .pipe(gulp.dest('./', { overwrite: true }));
   })
 
-  return gulpsync.sync(['public-manifest', 'implement-public-manifest']);
+  return gulp.series(['public-manifest', 'implement-public-manifest']);
 }
 
