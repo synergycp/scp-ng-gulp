@@ -35,7 +35,7 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
-    "lodash": "^4.16.4"
+    "lodash": "^4.17.21"
   },
   "scripts": {
     "prestart": "",
